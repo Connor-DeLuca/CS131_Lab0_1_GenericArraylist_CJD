@@ -18,8 +18,10 @@ public class FirstList<E>
    	@SuppressWarnings("unchecked")
     public FirstList(int length)
     {
-	       // ar=new E[length]; //causes a compile error
-	       ar=(E[]) new Object[length];
+   		// ar=ne	
+   		//Students complete the class. Start with a setter called addItem    //Write code to add an item to the end of the array   
+   		//New Methods Followw E[length]; //causes a compile error
+   		ar=(E[]) new Object[length];
     }
 	
 	 //Students complete the class. Start with a setter called addItem    //Write code to add an item to the end of the array   
@@ -28,4 +30,15 @@ public class FirstList<E>
 	  *@param  Item to add to the end of the list
 	  *
 	  */	  
+   	
+   	public void doubleListSize() {
+   		E[] tempArr = (E[]) new Object[ar.length * 2];
+   		for (int i = 0; i < ar.length; i++) {
+   			tempArr[i] = ar[i];
+   		}
+   		ar = tempArr;
+   	}
+   	
+   	
+   	
 }
