@@ -40,8 +40,29 @@ public class FirstList<E>
    	}
    	
    	public void addItem(E item) {
-   		
+   		if(currentItem > ar.length) {
+   			doubleListSize();
+   		}
+   		ar[currentItem] = item;
+   		currentItem += 1;
    	}
+   	
+   	public void addItem(E item, int index) {
+   		if(currentItem > ar.length) {
+   			doubleListSize();
+   		}
+   		if(index == currentItem) {
+   			ar[currentItem] = item;
+   		}
+   		else {
+   			for (int i == index; i < ar.length - 1; i++) {
+   				// move all of them ahead and then afterwards add item to ar[index]
+   			}
+   		}
+   		currentItem += 1;
+   	}
+   	
+   	
    	
    	
    	
