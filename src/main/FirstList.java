@@ -39,6 +39,10 @@ public class FirstList<E>
    		ar = tempArr;
    	}
    	
+   	public void addItem(E item) {
+   		
+   	}
+   	
    	
    	
 }
