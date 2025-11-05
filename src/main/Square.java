@@ -7,6 +7,14 @@ public class Square {
 		side = 0.0;
 	}
 	
+	public Square(double s) {
+		side = s;
+	}
+	
+	public double getArea() {
+		return side*side;
+	}
+	
 	public double getSide() {
 		return side;
 	}
@@ -15,11 +23,9 @@ public class Square {
 		this.side = side;
 	}
 
-	public Square(double s) {
-		side = s;
+	@Override
+	public String toString() {
+		return "Square [side=" + side + "]";
 	}
-	
-	public double getArea() {
-		return side*side;
-	}
+
 }
