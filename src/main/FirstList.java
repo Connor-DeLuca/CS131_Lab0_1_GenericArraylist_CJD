@@ -40,7 +40,7 @@ public class FirstList<E>
    	}
    	
    	public void addItem(E item) {
-   		if(currentItem > ar.length) {
+   		if(currentItem > ar.length-1) {
    			doubleListSize();
    		}
    		ar[currentItem] = item;
@@ -48,22 +48,42 @@ public class FirstList<E>
    	}
    	
    	public void addItem(E item, int index) {
-   		if(currentItem > ar.length) {
+   		if(currentItem > ar.length-1) {
    			doubleListSize();
    		}
    		if(index == currentItem) {
    			ar[currentItem] = item;
    		}
    		else {
-   			for (int i == index; i < ar.length - 1; i++) {
+   			for (int i = index; i < ar.length - 1; i++) {
    				// move all of them ahead and then afterwards add item to ar[index]
+   				ar[i+1] = ar[i];
    			}
+   			ar[index] = item;
    		}
    		currentItem += 1;
    	}
    	
    	
+   	public void deleteItem(int index) {
+   		if (index == currentItem) {
+   			ar[index] = null;
+   		}
+   		else {
+   			for (int i = index + 1; i < ar.length - 1; i++) {
+   				ar[i - 1] = ar[i];
+   			}
+   			currentItem -= 1;
+   		}
+   	}
    	
+   	public int getLength() {
+   		return ar.length;
+   	}
+   	
+   	public E getItem(int index) {
+   		return ar[index];
+   	}
    	
    	
 }
