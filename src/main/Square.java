@@ -25,7 +25,7 @@ public class Square {
 
 	@Override
 	public String toString() {
-		return "Square [side=" + side + "]";
+		return "Square [side=" + side + ", area=" + (side*side) + "]";
 	}
 
 }

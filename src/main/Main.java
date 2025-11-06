@@ -23,9 +23,39 @@ public class Main {
 		{
 			System.out.print(aList.getItem(i)+" ");
 		}
+		System.out.println();
+		System.out.println("Squares:");
 		
+		FirstList myList = new FirstList<Square>();
+		for (int i = 0; i < 20; i++) {
+			myList.addItem(new Square((double)i));
+		}
+		System.out.println(myList.getItem(1).toString());
+		System.out.println(myList.getItem(15).toString());
 		
-
+		myList = new FirstList<PointThreeD>();
+		for(int i = 0; i < 20; i++) {
+			myList.addItem(new PointThreeD((double)i,(double)i,(double)i));
+		}
+		
+		double x12 = ((PointThreeD)myList.getItem(12)).getxPoint();
+		double x3 = ((PointThreeD)myList.getItem(3)).getxPoint();
+		double y12 = ((PointThreeD)myList.getItem(12)).getyPoint();
+		double y3 = ((PointThreeD)myList.getItem(3)).getyPoint();
+		double z12 = ((PointThreeD)myList.getItem(12)).getzPoint();
+		double z3 = ((PointThreeD)myList.getItem(3)).getzPoint();
+		
+		double distance = Math.sqrt(Math.pow((x12 - x3),2) + Math.pow((y12 - y3),2) + Math.pow((z12 - z3),2));
+		System.out.println("Point Distance: " + String.valueOf(Math.round(distance * 100.0) / 100.0));
+		
+		System.out.println("ShapeList contents:");
+		
+		FirstList<Object> shapeList = new FirstList<Object>();
+		shapeList.addItem(new PointThreeD(2.0,3.0,5.0));
+		shapeList.addItem(new Square(2.0));
+		System.out.println(shapeList.getItem(0).toString());
+		System.out.println(shapeList.getItem(1).toString());
+		
 		
 		/*
 		 INSTRUCTIONS
@@ -42,7 +72,6 @@ public class Main {
 		 
         Part 3
         7. Instantiate a new FirstLIst object to store both Points and Squares
-
         8. Call addItem() to add a new PointThreeD with the following parameters: 2.0,3.0,5.0
         9. Call addItem() to add a new Square with side 2.0
         10. Call getItem(0) and call its toString() method to print the point
